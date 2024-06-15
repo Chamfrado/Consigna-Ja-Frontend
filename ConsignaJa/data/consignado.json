@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "client_id": "Loja do José",
+    "date": "2024-05-01",
+    "date_fin": "2024-05-30",
+    "status": "Em Andamento",
+    "value": 1000.00,
+    "productList": [
+      {
+        "id": 1,
+        "produto_id": 1,
+        "produto_nome": "Anel de Ouro 18K com Diamantes",
+        "valor": 500.00,
+        "quantidade": 3
+      },
+      {
+        "id": 2,
+        "produto_id": 2,
+        "produto_nome": "Colar de Pérolas Naturais",
+        "valor": 600.00,
+        "quantidade": 3
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "client_id": "Drogaria Popular",
+    "date": "2024-05-02",
+    "date_fin": "2024-05-30",
+    "status": "Finalizado",
+    "value": 1500.00,
+    "productList": [
+      {
+        "id": 3,
+        "produto_id": 3,
+        "produto_nome": "Pulseira de Prata 925 com Ametista",
+        "valor": 500.00,
+        "quantidade": 3
+      },
+      {
+        "id": 4,
+        "produto_id": 4,
+        "produto_nome": "Brinco de Ouro Branco 18K com Safira",
+        "valor": 600.00,
+        "quantidade": 3
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "client_id": "Supermercado da Maria",
+    "date": "2024-05-02",
+    "date_fin": "2024-05-30",
+    "status": "Finalizado",
+    "value": 2000.00,
+    "productList": [
+      {
+        "id": 5,
+        "produto_id": 5,
+        "produto_nome": "Pingente de Ouro Amarelo 18K",
+        "valor": 500.00,
+        "quantidade": 3
+      },
+      {
+        "id": 6,
+        "produto_id": 6,
+        "produto_nome": "Anel Solitário de Diamante",
+        "valor": 600.00,
+        "quantidade": 3
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "client_id": "Padaria Sabor & Delícia",
+    "date": "2024-05-03",
+    "date_fin": "2024-05-30",
+    "status": "Em Andamento",
+    "value": 2500.00,
+    "productList": [
+      {
+        "id": 7,
+        "produto_id": 7,
+        "produto_nome": "Colar de Ouro Rosé 18K com Rubi",
+        "valor": 500.00,
+        "quantidade": 3
+      },
+      {
+        "id": 8,
+        "produto_id": 8,
+        "produto_nome": "Pulseira de Couro com Fecho de Ouro",
+        "valor": 600.00,
+        "quantidade": 3
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "client_id": "Loja de Moda Fashion",
+    "date": "2024-05-04",
+    "date_fin": "2024-05-30",
+    "status": "Em Andamento",
+    "value": 1700.00,
+    "productList": [
+      {
+        "id": 9,
+        "produto_id": 9,
+        "produto_nome": "Brinco de Prata com Quartzo Rosa",
+        "valor": 500.00,
+        "quantidade": 3
+      },
+      {
+        "id": 10,
+        "produto_id": 10,
+        "produto_nome": "Pingente de Prata com Turquesa",
+        "valor": 600.00,
+        "quantidade": 3
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "client_id": "Casa de Materiais de Construção ABC",
+    "date": "2024-05-05",
+    "date_fin": "2024-05-30",
+    "status": "Finalizado",
+    "value": 2600.00,
+    "productList": [
+      {
+        "id": 11,
+        "produto_id": 11,
+        "produto_nome": "Anel de Platina com Esmeralda",
+        "valor": 500.00,
+        "quantidade": 3
+      },
+      {
+        "id": 12,
+        "produto_id": 12,
+        "produto_nome": "Colar de Prata com Cristal Swarovski",
+        "valor": 600.00,
+        "quantidade": 3
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "client_id": "Loja de Ferramentas Aço & Ferro",
+    "date": "2024-05-06",
+    "date_fin": "2024-05-30",
+    "status": "Em Andamento",
+    "value": 2300.00,
+    "productList": [
+      {
+        "id": 13,
+        "produto_id": 13,
+        "produto_nome": "Brinco de Ouro Amarelo com Citrino",
+        "valor": 500.00,
+        "quantidade": 3
+      },
+      {
+        "id": 1,
+        "produto_id": 1,
+        "produto_nome": "Anel de Ouro 18K com Diamantes",
+        "valor": 600.00,
+        "quantidade": 3
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "client_id": "Pet Shop Amigo Fiel",
+    "date": "2024-05-07",
+    "date_fin": "2024-05-30",
+    "status": "Finalizado",
+    "value": 2000.00,
+    "productList": [
+      {
+        "id": 2,
+        "produto_id": 2,
+        "produto_nome": "Colar de Pérolas Naturais",
+        "valor": 500.00,
+        "quantidade": 3
+      },
+      {
+        "id": 3,
+        "produto_id": 3,
+        "produto_nome": "Pulseira de Prata 925 com Ametista",
+        "valor": 600.00,
+        "quantidade": 3
+      }
+    ]
+  }
+]

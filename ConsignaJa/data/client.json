@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "name": "Loja do José",
+    "cnpj": "12.345.678/0001-90",
+    "phone": "(11) 1234-5678",
+    "logradouro": "Av. Paulista, 123",
+    "cep": "01310-100",
+    "uf": "SP",
+    "latitude": -23.561,
+    "longitude": -46.655
+  },
+  {
+    "id": 2,
+    "name": "Supermercado da Maria",
+    "cnpj": "98.765.432/0001-21",
+    "phone": "(21) 9876-5432",
+    "logradouro": "Rua da Candelária, 456",
+    "cep": "20091-904",
+    "uf": "RJ",
+    "latitude": -22.908,
+    "longitude": -43.177
+  },
+  {
+    "id": 3,
+    "name": "Drogaria Popular",
+    "cnpj": "09.876.543/0001-34",
+    "phone": "(31) 1111-2222",
+    "logradouro": "Av. do Contorno, 789",
+    "cep": "30110-910",
+    "uf": "MG",
+    "latitude": -19.922,
+    "longitude": -43.937
+  },
+  {
+    "id": 4,
+    "name": "Loja de Eletrônicos Power",
+    "cnpj": "65.432.109/0001-55",
+    "phone": "(51) 4444-5555",
+    "logradouro": "Rua dos Andradas, 101",
+    "cep": "90020-008",
+    "uf": "RS",
+    "latitude": -30.029,
+    "longitude": -51.228
+  },
+  {
+    "id": 5,
+    "name": "Padaria Sabor & Delícia",
+    "cnpj": "34.567.890/0001-76",
+    "phone": "(77) 6666-7777",
+    "logradouro": "Av. Sete de Setembro, 222",
+    "cep": "40060-001",
+    "uf": "BA",
+    "latitude": -12.972,
+    "longitude": -38.501
+  },
+  {
+    "id": 6,
+    "name": "Loja de Moda Fashion",
+    "cnpj": "78.901.234/0001-09",
+    "phone": "(90) 3333-4444",
+    "logradouro": "Rua da Praia, 333",
+    "cep": "88015-000",
+    "uf": "SC",
+    "latitude": -27.596,
+    "longitude": -48.548
+  },
+  {
+    "id": 7,
+    "name": "Casa de Materiais de Construção ABC",
+    "cnpj": "54.321.098/0001-76",
+    "phone": "(61) 7777-8888",
+    "logradouro": "Rua das Flores, 444",
+    "cep": "70070-000",
+    "uf": "DF",
+    "latitude": -15.798,
+    "longitude": -47.864
+  },
+  {
+    "id": 8,
+    "name": "Loja de Ferramentas Aço & Ferro",
+    "cnpj": "90.123.456/0001-34",
+    "phone": "(85) 8888-9999",
+    "logradouro": "Av. Castelo Branco, 555",
+    "cep": "60060-170",
+    "uf": "CE",
+    "latitude": -3.717,
+    "longitude": -38.543
+  },
+  {
+    "id": 9,
+    "name": "Pet Shop Amigo Fiel",
+    "cnpj": "23.456.789/0001-87",
+    "phone": "(99) 1111-2222",
+    "logradouro": "Av. Independência, 666",
+    "cep": "66035-110",
+    "uf": "PA",
+    "latitude": -1.455,
+    "longitude": -48.491
+  },
+  {
+    "id": 10,
+    "name": "Loja de Instrumentos Musicais Som & Acordes",
+    "cnpj": "76.543.210/0001-98",
+    "phone": "(41) 2222-3333",
+    "logradouro": "Rua das Orquídeas, 777",
+    "cep": "80050-250",
+    "uf": "PR",
+    "latitude": -25.429,
+    "longitude": -49.271
+  },
+  {
+    "id": 11,
+    "name": "Livraria Letras & Saberes",
+    "cnpj": "09.876.543/0001-12",
+    "phone": "(12) 5555-6666",
+    "logradouro": "Av. Amazonas, 888",
+    "cep": "69020-160",
+    "uf": "AM",
+    "latitude": -3.119,
+    "longitude": -60.021
+  },
+  {
+    "id": 12,
+    "name": "Bazar Coisas de Casa",
+    "cnpj": "32.109.876/0001-34",
+    "phone": "(65) 7777-8888",
+    "logradouro": "Av. dos Trabalhadores, 999",
+    "cep": "78068-225",
+    "uf": "MT",
+    "latitude": -15.601,
+    "longitude": -56.097
+  },
+  {
+    "id": 13,
+    "name": "Estúdio de Piercing Belas Artes",
+    "cnpj": "21.234.567/0001-89",
+    "phone": "(13) 9999-8888",
+    "logradouro": "Rua do Comércio, 101",
+    "cep": "11015-000",
+    "uf": "SP",
+    "latitude": -23.967,
+    "longitude": -46.328
+  },
+  {
+    "id": 14,
+    "name": "Farmácia Vida Saudável",
+    "cnpj": "10.987.654/0001-43",
+    "phone": "(27) 8765-4321",
+    "logradouro": "Av. Central, 202",
+    "cep": "29160-100",
+    "uf": "ES",
+    "latitude": -20.322,
+    "longitude": -40.338
+  },
+  {
+    "id": 15,
+    "name": "Joalheria Ouro Fino",
+    "cnpj": "45.678.901/0001-12",
+    "phone": "(35) 1234-5678",
+    "logradouro": "Rua das Palmeiras, 303",
+    "cep": "37500-000",
+    "uf": "MG",
+    "latitude": -22.430,
+    "longitude": -45.459
+  }
+]

@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "name": "Lohran Cintra",
+      "email": "Teste",
+      "role": "admin",
+      "password": "Teste"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "email": "Teste",
+      "role": "user",
+      "password": "hashed_password"
+    },
+    {
+      "id": 3,
+      "name": "Jane Doe",
+      "email": "lohrancintra@gmail.com",
+      "role": "user",
+      "password": "1524"
+    }
+  ]
+  

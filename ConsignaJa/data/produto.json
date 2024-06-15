@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "name": "Anel de Ouro 18K com Diamantes",
+    "codigo": "JOIA001",
+    "person_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Colar de Pérolas Naturais",
+    "codigo": "JOIA002",
+    "person_id": 2
+  },
+  {
+    "id": 3,
+    "name": "Pulseira de Prata 925 com Ametista",
+    "codigo": "JOIA003",
+    "person_id": 3
+  },
+  {
+    "id": 4,
+    "name": "Brinco de Ouro Branco 18K com Safira",
+    "codigo": "JOIA004",
+    "person_id": 4
+  },
+  {
+    "id": 5,
+    "name": "Pingente de Ouro Amarelo 18K",
+    "codigo": "JOIA005",
+    "person_id": 5
+  },
+  {
+    "id": 6,
+    "name": "Anel Solitário de Diamante",
+    "codigo": "JOIA006",
+    "person_id": 6
+  },
+  {
+    "id": 7,
+    "name": "Colar de Ouro Rosé 18K com Rubi",
+    "codigo": "JOIA007",
+    "person_id": 7
+  },
+  {
+    "id": 8,
+    "name": "Pulseira de Couro com Fecho de Ouro",
+    "codigo": "JOIA008",
+    "person_id": 8
+  },
+  {
+    "id": 9,
+    "name": "Brinco de Prata com Quartzo Rosa",
+    "codigo": "JOIA009",
+    "person_id": 9
+  },
+  {
+    "id": 10,
+    "name": "Pingente de Prata com Turquesa",
+    "codigo": "JOIA010",
+    "person_id": 10
+  },
+  {
+    "id": 11,
+    "name": "Anel de Platina com Esmeralda",
+    "codigo": "JOIA011",
+    "person_id": 11
+  },
+  {
+    "id": 12,
+    "name": "Colar de Prata com Cristal Swarovski",
+    "codigo": "JOIA012",
+    "person_id": 12
+  },
+  {
+    "id": 13,
+    "name": "Brinco de Ouro Amarelo com Citrino",
+    "codigo": "JOIA013",
+    "person_id": 13
+  }
+]

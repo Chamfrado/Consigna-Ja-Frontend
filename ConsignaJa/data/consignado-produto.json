@@ -1,0 +1,15 @@
+[
+    {
+      "id": 1,
+      "consignado_id": 1,
+      "produto_id": 1,
+      "valor": 500.00
+    },
+    {
+      "id": 2,
+      "consignado_id": 1,
+      "produto_id": 2,
+      "valor": 600.00
+    }
+  ]
+  
