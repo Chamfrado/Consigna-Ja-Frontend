@@ -7,6 +7,7 @@ import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { AppNavigator } from "./routes/routes";
 import { ThemeContext } from "./context/theme-context";
 import { default as CustomTheme } from "./assets/custom-theme.json";
+import { DataProvider } from "./context/data-context"; // Import the DataProvider
 
 import AuthProvider from "./context/auth-context";
 
@@ -25,7 +26,9 @@ export default () => {
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <ApplicationProvider {...eva} theme={{ ...eva[theme], ...CustomTheme }}>
           <AuthProvider>
-            <AppNavigator />
+            <DataProvider>
+              <AppNavigator />
+            </DataProvider>
           </AuthProvider>
         </ApplicationProvider>
       </ThemeContext.Provider>

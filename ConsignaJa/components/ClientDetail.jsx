@@ -3,9 +3,13 @@ import React, { useEffect, useState } from 'react'
 import { StyleSheet } from 'react-native';
 import { CancelAlert } from './CancelAlert';
 
+import { useData } from '../context/data-context';
+
 export const ClientDetail = ({ selected, onDismiss, item }) => {
   const [visible, setVisible] = useState(false);
 
+
+  const { deleteClient } = useData();
 
 
   const [editMode, setEditmode] = useState(false);
@@ -35,6 +39,11 @@ export const ClientDetail = ({ selected, onDismiss, item }) => {
       name='trash-2-outline'
     />
   );
+
+  const onDelete = () => {
+    deleteClient(item.id)
+    dismiss();
+  }
 
 
 
@@ -124,7 +133,7 @@ export const ClientDetail = ({ selected, onDismiss, item }) => {
           >
             Editar?
           </Toggle>
-          <Button size='tiny' status='danger' appearance='outline' accessoryLeft={renderItemIcon} onPress={() => alert(editMode)}>Deletar</Button>
+          <Button size='tiny' status='danger' appearance='outline' accessoryLeft={renderItemIcon} onPress={onDelete}>Deletar</Button>
         </Layout>
         {editMode ? <Layout style={{ paddingBottom: 20 }}>
           <Button size='small' status='success' appearance='outline' accessoryLeft={renderItemIcon}>Salvar</Button>

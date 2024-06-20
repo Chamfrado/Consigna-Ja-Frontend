@@ -1,12 +1,13 @@
 import { Button, Icon, Input, Layout, List, ListItem } from "@ui-kitten/components";
-import data from "../data/client.json"
 import { useState } from "react";
 import { ClientDetail } from "./ClientDetail";
 import { AddClient } from "./AddClient";
 
+import { useData } from '../context/data-context';
+
 export const ClientList = (props) => {
 
-    
+    const { clients } = useData();
     const [selectedItem, setSelectedItem] = useState({
         item: null,
         selected: false
@@ -35,7 +36,7 @@ export const ClientList = (props) => {
     const [searchQuery, setSearchQuery] = useState('');
     
 
-    const filteredData = data.filter(item =>
+    const filteredData = clients.filter(item =>
         item.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
