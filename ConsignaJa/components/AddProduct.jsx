@@ -2,10 +2,13 @@ import { Button, Card, Icon, Input, Layout, Modal, Text } from '@ui-kitten/compo
 import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { CancelAlert } from './CancelAlert';
-import { getCNPJData } from '../services/SearchCnpj';
+import { useData } from '../context/data-context';
 
-export const AddProduct = ({ onDismiss, add }) => {
+export const AddProduct = ({ onDismiss, add, showAlert }) => {
     const [visible, setVisible] = useState(false);
+
+    const { addProduct } = useData();
+
 
     const [item, setItem] = useState({
         name: "",
@@ -41,6 +44,12 @@ export const AddProduct = ({ onDismiss, add }) => {
 
     };
 
+    const onAdd = () => {
+        addProduct(item);
+        showAlert("Produto Adicionado com Sucesso!", "success");
+        onDismiss();
+      };
+
     return (
         <Modal
             visible={visible}
@@ -61,8 +70,7 @@ export const AddProduct = ({ onDismiss, add }) => {
                     </Text>
                     <Input
                         size='small'
-                        placeholder="00.000.000/0001-91"
-                        value={item.cnpj}
+                        value={item.name}
                         onChangeText={(value) => handleChange('name', value)}
                     />
                 </Layout>
@@ -73,12 +81,12 @@ export const AddProduct = ({ onDismiss, add }) => {
                     <Input
                         size='small'
                         placeholder="Codigo do Produto"
-                        value={item.name}
+                        value={item.codigo}
                         onChangeText={(value) => handleChange('codigo', value)}
                     />
                 </Layout>
                 <Layout style={{ paddingBottom: 20 }}>
-                    <Button size='small' status='success' appearance='outline' accessoryLeft={renderItemIcon}>
+                    <Button size='small' status='success' appearance='outline' onPress={onAdd} accessoryLeft={renderItemIcon}>
                         Salvar
                     </Button>
                 </Layout>

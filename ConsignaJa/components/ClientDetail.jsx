@@ -52,7 +52,7 @@ export const ClientDetail = ({ selected, onDismiss, item, showAlert }) => {
           text: "Confirmar",
           onPress: () => {
             deleteClient(item.id);
-            showAlert("Cliente Deletado com Sucesso!", "success")
+            showAlert("Cliente Deletado com Sucesso!", "success");
             onDismiss();
           },
         },
@@ -70,11 +70,9 @@ export const ClientDetail = ({ selected, onDismiss, item, showAlert }) => {
   const onSave = () => {
     turnEditMode();
     updateClient(item.id, newData);
-    showAlert("Cliente Atualizado com Sucesso!", "success")
+    showAlert("Cliente Atualizado com Sucesso!", "success");
     onDismiss();
   };
-
-  
 
   return (
     <Modal

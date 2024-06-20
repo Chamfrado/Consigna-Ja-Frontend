@@ -1,9 +1,12 @@
 import { Button, Card, Icon, IndexPath, Input, Layout, Modal, Select, SelectItem, Text, Toggle } from '@ui-kitten/components'
 import React, { useEffect, useState } from 'react'
-import { StyleSheet } from 'react-native';
+import { Alert, StyleSheet } from 'react-native';
 import { CancelAlert } from './CancelAlert';
+import { useData } from '../context/data-context';
 
-export const ProductDetail = ({ selected, onDismiss, item }) => {
+export const ProductDetail = ({ selected, onDismiss, item, showAlert }) => {
+  const { deleteProduct, updateProduct } = useData();
+  const [newData, setNewData] = useState(item);
   const [visible, setVisible] = useState(false);
 
 
@@ -37,6 +40,42 @@ export const ProductDetail = ({ selected, onDismiss, item }) => {
   );
 
 
+  const onDelete = () => {
+    Alert.alert(
+      "Atenção!",
+      "Deseja mesmo excluir este produto? Essa operação é irreversível.",
+      [
+        {
+          text: "Cancelar",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel",
+        },
+        {
+          text: "Confirmar",
+          onPress: () => {
+            deleteProduct(item.id);
+            showAlert("Produto Deletado com Sucesso!", "success")
+            onDismiss();
+          },
+        },
+      ]
+    );
+  };
+
+  const handleChange = (name, value) => {
+    setNewData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const onSave = () => {
+    turnEditMode();
+    updateProduct(item.id, newData);
+    showAlert("Cliente Atualizado com Sucesso!", "success")
+    onDismiss();
+  };
+
 
 
   return (
@@ -59,7 +98,8 @@ export const ProductDetail = ({ selected, onDismiss, item }) => {
           </Text>
           <Input
             size='small'
-            placeholder={item.name}
+            onChangeText={(value) => handleChange("name", value)}
+            value={newData.name}
             disabled={!editMode}
           />
         </Layout>
@@ -69,7 +109,8 @@ export const ProductDetail = ({ selected, onDismiss, item }) => {
           </Text>
           <Input
             size='small'
-            placeholder={item.codigo}
+            onChangeText={(value) => handleChange("codigo", value)}
+            value={newData.codigo}
             disabled={!editMode}
           />
         </Layout>
@@ -83,10 +124,10 @@ export const ProductDetail = ({ selected, onDismiss, item }) => {
           >
             Editar?
           </Toggle>
-          <Button size='tiny' status='danger' appearance='outline' accessoryLeft={renderItemIcon} onPress={() => alert(editMode)}>Deletar</Button>
+          <Button size='tiny' status='danger' appearance='outline' accessoryLeft={renderItemIcon} onPress={onDelete}>Deletar</Button>
         </Layout>
         {editMode ? <Layout style={{ paddingBottom: 20 }}>
-          <Button size='small' status='success' appearance='outline' accessoryLeft={renderItemIcon}>Salvar</Button>
+          <Button size='small' status='success' appearance='outline' accessoryLeft={renderItemIcon} onPress={onSave}>Salvar</Button>
         </Layout> : null}
 
 
