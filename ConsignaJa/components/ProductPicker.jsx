@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Button, Card, Icon, Input, Layout, List, ListItem, Modal, Text } from '@ui-kitten/components';
-import data from "../data/produto.json"
+import { useData } from '../context/data-context';
 
 export const ProductPicker = ({ product, onDismiss, onChange }) => {
+
+    const {products} = useData()
 
     const [visible, setVisible] = useState(true);
 
@@ -18,7 +20,7 @@ export const ProductPicker = ({ product, onDismiss, onChange }) => {
 
     const [searchQuery, setSearchQuery] = useState('');
 
-    const filteredData = data.filter(item =>
+    const filteredData = products.filter(item =>
         item.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 

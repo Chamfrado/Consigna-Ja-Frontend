@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Loja do José",
-    "cnpj": "12.345.678/0001-90",
+    "cnpj": "12345678000190",
     "phone": "(11) 1234-5678",
     "logradouro": "Av. Paulista, 123",
     "cep": "01310-100",
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "name": "Supermercado da Maria",
-    "cnpj": "98.765.432/0001-21",
+    "cnpj": "98765432000121",
     "phone": "(21) 9876-5432",
     "logradouro": "Rua da Candelária, 456",
     "cep": "20091-904",
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "name": "Drogaria Popular",
-    "cnpj": "09.876.543/0001-34",
+    "cnpj": "09876543000134",
     "phone": "(31) 1111-2222",
     "logradouro": "Av. do Contorno, 789",
     "cep": "30110-910",
@@ -35,7 +35,7 @@
   {
     "id": 4,
     "name": "Loja de Eletrônicos Power",
-    "cnpj": "65.432.109/0001-55",
+    "cnpj": "65432109000155",
     "phone": "(51) 4444-5555",
     "logradouro": "Rua dos Andradas, 101",
     "cep": "90020-008",
@@ -46,7 +46,7 @@
   {
     "id": 5,
     "name": "Padaria Sabor & Delícia",
-    "cnpj": "34.567.890/0001-76",
+    "cnpj": "34567890000176",
     "phone": "(77) 6666-7777",
     "logradouro": "Av. Sete de Setembro, 222",
     "cep": "40060-001",
@@ -57,7 +57,7 @@
   {
     "id": 6,
     "name": "Loja de Moda Fashion",
-    "cnpj": "78.901.234/0001-09",
+    "cnpj": "78901234000109",
     "phone": "(90) 3333-4444",
     "logradouro": "Rua da Praia, 333",
     "cep": "88015-000",
@@ -68,7 +68,7 @@
   {
     "id": 7,
     "name": "Casa de Materiais de Construção ABC",
-    "cnpj": "54.321.098/0001-76",
+    "cnpj": "54321098000176",
     "phone": "(61) 7777-8888",
     "logradouro": "Rua das Flores, 444",
     "cep": "70070-000",
@@ -79,7 +79,7 @@
   {
     "id": 8,
     "name": "Loja de Ferramentas Aço & Ferro",
-    "cnpj": "90.123.456/0001-34",
+    "cnpj": "90123456000134",
     "phone": "(85) 8888-9999",
     "logradouro": "Av. Castelo Branco, 555",
     "cep": "60060-170",
@@ -90,7 +90,7 @@
   {
     "id": 9,
     "name": "Pet Shop Amigo Fiel",
-    "cnpj": "23.456.789/0001-87",
+    "cnpj": "23456789000187",
     "phone": "(99) 1111-2222",
     "logradouro": "Av. Independência, 666",
     "cep": "66035-110",
@@ -101,7 +101,7 @@
   {
     "id": 10,
     "name": "Loja de Instrumentos Musicais Som & Acordes",
-    "cnpj": "76.543.210/0001-98",
+    "cnpj": "76543210000198",
     "phone": "(41) 2222-3333",
     "logradouro": "Rua das Orquídeas, 777",
     "cep": "80050-250",
@@ -112,7 +112,7 @@
   {
     "id": 11,
     "name": "Livraria Letras & Saberes",
-    "cnpj": "09.876.543/0001-12",
+    "cnpj": "09876543000112",
     "phone": "(12) 5555-6666",
     "logradouro": "Av. Amazonas, 888",
     "cep": "69020-160",
@@ -123,7 +123,7 @@
   {
     "id": 12,
     "name": "Bazar Coisas de Casa",
-    "cnpj": "32.109.876/0001-34",
+    "cnpj": "32109876000134",
     "phone": "(65) 7777-8888",
     "logradouro": "Av. dos Trabalhadores, 999",
     "cep": "78068-225",
@@ -134,7 +134,7 @@
   {
     "id": 13,
     "name": "Estúdio de Piercing Belas Artes",
-    "cnpj": "21.234.567/0001-89",
+    "cnpj": "21234567000189",
     "phone": "(13) 9999-8888",
     "logradouro": "Rua do Comércio, 101",
     "cep": "11015-000",
@@ -145,7 +145,7 @@
   {
     "id": 14,
     "name": "Farmácia Vida Saudável",
-    "cnpj": "10.987.654/0001-43",
+    "cnpj": "10987654000143",
     "phone": "(27) 8765-4321",
     "logradouro": "Av. Central, 202",
     "cep": "29160-100",
@@ -156,7 +156,7 @@
   {
     "id": 15,
     "name": "Joalheria Ouro Fino",
-    "cnpj": "45.678.901/0001-12",
+    "cnpj": "45678901000112",
     "phone": "(35) 1234-5678",
     "logradouro": "Rua das Palmeiras, 303",
     "cep": "37500-000",

@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Button, Card, Icon, Input, Layout, List, ListItem, Modal, Text } from '@ui-kitten/components';
 import data from "../data/client.json"
+import { useData } from '../context/data-context';
 
 export const SelectClient = ({ client, onDismiss, onChange }) => {
 
+    const {clients} = useData();
+    
     const [visible, setVisible] = useState(true);
 
     const [selectedItem, setSelectedItem] = useState({
@@ -31,7 +34,7 @@ export const SelectClient = ({ client, onDismiss, onChange }) => {
     const [searchQuery, setSearchQuery] = useState('');
     
 
-    const filteredData = data.filter(item =>
+    const filteredData = clients.filter(item =>
         item.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 

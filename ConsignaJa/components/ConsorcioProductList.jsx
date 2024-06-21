@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
-import { StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Alert } from 'react-native';
 import { Divider, Icon, Layout, List, ListItem, Text } from '@ui-kitten/components';
 import { ProductPicker } from './ProductPicker';
 
 export const ConsorcioProductList = ({ productList }) => {
-
     const [selectedItem, setSelectedItem] = useState({
         item: null,
         selected: false,
         index: null
     });
 
-    const [data, setData] = useState(productList);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        setData(productList);
+    }, [productList]);
 
     const handleRowPress = (item, index) => {
         setSelectedItem({
@@ -30,10 +33,21 @@ export const ConsorcioProductList = ({ productList }) => {
     };
 
     const updateProductList = (updatedProduct) => {
-        const updatedData = data.map((item, index) => 
-            index === selectedItem.index ? updatedProduct : item
-        );
-        setData(updatedData);
+        if (selectedItem.index !== null) {
+            // Update existing product
+            const updatedData = data.map((item, index) => 
+                index === selectedItem.index ? updatedProduct : item
+            );
+            setData(updatedData);
+        } else {
+            // Add new product
+            setData([...data, updatedProduct]);
+        }
+        dismissModal();
+    };
+
+    const deleteItem = (index) => {
+        setData((prevData) => prevData.filter((_, i) => i !== index));
     };
 
     const renderItemIcon = (props) => (
@@ -45,7 +59,23 @@ export const ConsorcioProductList = ({ productList }) => {
 
     const renderItem = ({ item, index }) => (
         <ListItem
-            onLongPress={() => alert("deletar")}
+            onLongPress={() => 
+                Alert.alert(
+                    "Atenção!",
+                    "Deseja mesmo excluir este produto? Essa operação é irreversível.",
+                    [
+                        {
+                            text: "Cancelar",
+                            onPress: () => console.log("Cancel Pressed"),
+                            style: "cancel",
+                        },
+                        {
+                            text: "Confirmar",
+                            onPress: () => deleteItem(index),
+                        },
+                    ]
+                )
+            }
             onPress={() => handleRowPress(item, index)}
             title={`${item.produto_nome}`}
             description={`Valor: ${item.valor}  ||  Quantidade: ${item.quantidade}  ||  Total Parcial: ${item.quantidade * item.valor}`}
@@ -63,7 +93,7 @@ export const ConsorcioProductList = ({ productList }) => {
                 data={data}
                 ItemSeparatorComponent={Divider}
                 renderItem={renderItem}
-                style={{ maxHeight: 75 }}
+                style={{ maxHeight: 100 }}
             />
             {selectedItem.selected && 
                 <ProductPicker 
