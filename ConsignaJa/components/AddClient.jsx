@@ -15,7 +15,7 @@ import { getCNPJData } from "../services/SearchCnpj";
 import { useData } from "../context/data-context";
 import { cnpjFormatter } from "../services/Utility";
 
-export const AddClient = ({ onDismiss, add, showAlert }) => {
+export const AddClient = ({ onDismiss = () => {}, add = false, showAlert = () => {}}) => {
   const [visible, setVisible] = useState(false);
 
   const { addClient } = useData();

@@ -24,8 +24,8 @@ export const AddConsorcio = ({ onDismiss = () => {}, add = false, showAlert = ()
   const [item, setItem] = useState({
     id: 0,
     client_id: "",
-    date: new Date().toISOString(),
-    date_fin: new Date().toISOString(),
+    date: new Date(),
+    date_fin: new Date(),
     status: "Em Andamento",
     value: 0,
     productList: [],
@@ -47,17 +47,28 @@ export const AddConsorcio = ({ onDismiss = () => {}, add = false, showAlert = ()
 
   const renderItemIcon = (props) => <Icon {...props} name="trash-2-outline" />;
 
+  const CalendarIcon = (props) => (
+    <Icon
+      {...props}
+      name='calendar'
+    />
+  );
+  
+
   // Change handlers
   const handleChange = (field, value) => {
     setItem((prevItem) => ({ ...prevItem, [field]: value }));
   };
 
+  const [realDate, setRealDate] = useState(new Date())
+  const [realDateTerm, setRealDateTerm] = useState(new Date())
   const changeDate = (type, date) => {
-    const dateOnly = date.toISOString().split("T")[0];
+    alert(date.toLocaleDateString())
     setItem((prevItem) => ({
       ...prevItem,
-      [type === "inicio" ? "date" : "date_fin"]: dateFormatter(dateOnly),
+      [type === "inicio" ? "date" : "date_fin"]: date.toLocaleDateString() ,
     }));
+    type === "inicio" ? setRealDate(date) : setRealDateTerm(date)
   };
 
   const onSelectClient = (client) => {
@@ -130,15 +141,17 @@ export const AddConsorcio = ({ onDismiss = () => {}, add = false, showAlert = ()
         <Layout style={{ padding: 15 }}>
           <Text category="s1">Data Início</Text>
           <Datepicker
-            date={new Date(item.date)}
+            date={realDate}
             onSelect={(nextDate) => changeDate("inicio", nextDate)}
+            accessoryRight={CalendarIcon}
           />
         </Layout>
         <Layout style={{ padding: 15 }}>
           <Text category="s1">Previsão Término</Text>
           <Datepicker
-            date={new Date(item.date_fin)}
+            date={realDateTerm}
             onSelect={(nextDate) => changeDate("termino", nextDate)}
+            accessoryRight={CalendarIcon}
           />
         </Layout>
         <Layout style={{ paddingBottom: 20 }}>

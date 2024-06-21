@@ -1,10 +1,14 @@
 // Data formatter service
-export const dateFormatter = (dateString) => {
-  const date = new Date(dateString);
-  const day = String(date.getDate()).padStart(2, "0");
-  const month = String(date.getMonth() + 1).padStart(2, "0");
+export const dateFormatter = (date) => {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
   const year = date.getFullYear();
-  return `${day}/${month}/${year}`;
+
+  // Pad single digit day and month with leading zero
+  const formattedDay = day < 10 ? `0${day}` : day;
+  const formattedMonth = month < 10 ? `0${month}` : month;
+
+  return `${formattedDay}/${formattedMonth}/${year}`;
 };
 
 // CNPJ formatter service

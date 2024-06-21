@@ -1,6 +1,7 @@
 import * as Print from "expo-print";
 import * as Sharing from "expo-sharing";
 import { cnpjFormatter } from "./Utility";
+
 export const generateAndDownloadPDF = async (data, client) => {
   // Initialize totals
   let totalConsigned = 0;
@@ -35,6 +36,23 @@ export const generateAndDownloadPDF = async (data, client) => {
             display: flex;
             justify-content: center;
           }
+          .data {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+          }
+          .table-footer {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+          }
+          .table-footer td {
+            padding: 8px;
+            text-align: right;
+          }
+          .footer-cell {
+            border: none;
+          }
         </style>
       </head>
       <body>
@@ -42,15 +60,32 @@ export const generateAndDownloadPDF = async (data, client) => {
         <div class="image-container">
           <img src="https://pics.io/preview/66759a0fb6e4a0e6b2a3a7fc/thumbnail" alt="Logo" style="width: 200px; height: 200px;">
         </div>
-
         <div class="title">
           <h1>Comprovante</h1>
         </div>
-        <h2>Consignado Nº ${data.id}</h2>
-        <h4>Cliente: ${client.name}</h4>
-        <p>CNPJ: ${cnpjFormatter(client.cnpj)}</p>
-        <p>Telefone: ${client.phone}</p>
-        <p>Endereço: ${client.logradouro}, ${client.cep}, ${client.uf}</p>
+        <div class="title">
+          <h2>Consignado Nº ${data.id}</h2>
+        </div>
+        
+        <div class="data">
+          <p>Data de Início: ${data.date}</p>
+          <p>Finalização: ${data.date_fin}</p>
+        </div>
+        
+        <div class="title">
+          <h4>Cliente: ${client.name}</h4>
+        </div>
+        <div class="data">
+          <p>CNPJ: ${cnpjFormatter(client.cnpj)}</p>
+          <p>Telefone: ${client.phone}</p>
+        </div>
+        <div class="title">
+          <p>Endereço: ${client.logradouro}, ${client.cep}, ${client.uf}</p>
+        </div>
+        
+        <div class="title">
+          <h4>Lista de Produtos</h4>
+        </div>
 
         <table>
           <thead>
@@ -80,8 +115,17 @@ export const generateAndDownloadPDF = async (data, client) => {
               .join("")}
           </tbody>
         </table>
-        <p>Total Consignado: ${totalConsigned}</p>
-        <p>Total Vendido: ${totalSold}</p>
+
+        <table class="table-footer">
+          <tr>
+            <td colspan="5" class="footer-cell">Total Consignado:</td>
+            <td>${totalConsigned}</td>
+          </tr>
+          <tr>
+            <td colspan="5" class="footer-cell">Total Vendido:</td>
+            <td>${totalSold}</td>
+          </tr>
+        </table>
       </body>
     </html>
   `;
