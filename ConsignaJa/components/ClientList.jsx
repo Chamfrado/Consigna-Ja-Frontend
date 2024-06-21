@@ -13,6 +13,8 @@ import { AddClient } from "./AddClient";
 import { useData } from "../context/data-context";
 import { AlertComponent } from "./OperationAlert";
 
+import{ cnpjFormatter } from "../services/Utility"
+
 export const ClientList = (props) => {
   const { clients } = useData();
   const [selectedItem, setSelectedItem] = useState({
@@ -56,7 +58,7 @@ export const ClientList = (props) => {
     <ListItem
       onPress={() => selectItem(item)}
       title={`${item.name}`}
-      description={`${item.cnpj}`}
+      description={`${cnpjFormatter(item.cnpj)}`}
       accessoryLeft={renderItemIcon}
     />
   );

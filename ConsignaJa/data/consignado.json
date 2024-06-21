@@ -12,14 +12,16 @@
         "produto_id": 1,
         "produto_nome": "Anel de Ouro 18K com Diamantes",
         "valor": 500.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 0
       },
       {
         "id": 2,
         "produto_id": 2,
         "produto_nome": "Colar de Pérolas Naturais",
         "valor": 600.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 0
       }
     ]
   },
@@ -36,14 +38,16 @@
         "produto_id": 3,
         "produto_nome": "Pulseira de Prata 925 com Ametista",
         "valor": 500.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 2
       },
       {
         "id": 4,
         "produto_id": 4,
         "produto_nome": "Brinco de Ouro Branco 18K com Safira",
         "valor": 600.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 1
       }
     ]
   },
@@ -60,14 +64,16 @@
         "produto_id": 5,
         "produto_nome": "Pingente de Ouro Amarelo 18K",
         "valor": 500.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 3
       },
       {
         "id": 6,
         "produto_id": 6,
         "produto_nome": "Anel Solitário de Diamante",
         "valor": 600.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 0
       }
     ]
   },
@@ -84,14 +90,16 @@
         "produto_id": 7,
         "produto_nome": "Colar de Ouro Rosé 18K com Rubi",
         "valor": 500.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 0
       },
       {
         "id": 8,
         "produto_id": 8,
         "produto_nome": "Pulseira de Couro com Fecho de Ouro",
         "valor": 600.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 0
       }
     ]
   },
@@ -108,14 +116,16 @@
         "produto_id": 9,
         "produto_nome": "Brinco de Prata com Quartzo Rosa",
         "valor": 500.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 0
       },
       {
         "id": 10,
         "produto_id": 10,
         "produto_nome": "Pingente de Prata com Turquesa",
         "valor": 600.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 0
       }
     ]
   },
@@ -132,14 +142,16 @@
         "produto_id": 11,
         "produto_nome": "Anel de Platina com Esmeralda",
         "valor": 500.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 0
       },
       {
         "id": 12,
         "produto_id": 12,
         "produto_nome": "Colar de Prata com Cristal Swarovski",
         "valor": 600.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 0
       }
     ]
   },
@@ -156,14 +168,16 @@
         "produto_id": 13,
         "produto_nome": "Brinco de Ouro Amarelo com Citrino",
         "valor": 500.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 0
       },
       {
         "id": 1,
         "produto_id": 1,
         "produto_nome": "Anel de Ouro 18K com Diamantes",
         "valor": 600.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 1
       }
     ]
   },
@@ -180,14 +194,16 @@
         "produto_id": 2,
         "produto_nome": "Colar de Pérolas Naturais",
         "valor": 500.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 0
       },
       {
         "id": 3,
         "produto_id": 3,
         "produto_nome": "Pulseira de Prata 925 com Ametista",
         "valor": 600.00,
-        "quantidade": 3
+        "quantidade": 3,
+        "quantidade_vendida": 0
       }
     ]
   }

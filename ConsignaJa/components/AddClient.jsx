@@ -5,6 +5,7 @@ import {
   Input,
   Layout,
   Modal,
+  Spinner,
   Text,
 } from "@ui-kitten/components";
 import React, { useEffect, useState } from "react";
@@ -12,8 +13,9 @@ import { StyleSheet } from "react-native";
 import { CancelAlert } from "./CancelAlert";
 import { getCNPJData } from "../services/SearchCnpj";
 import { useData } from "../context/data-context";
+import { cnpjFormatter } from "../services/Utility";
 
-export const AddClient = ({ onDismiss, add , showAlert}) => {
+export const AddClient = ({ onDismiss, add, showAlert }) => {
   const [visible, setVisible] = useState(false);
 
   const { addClient } = useData();
@@ -50,14 +52,19 @@ export const AddClient = ({ onDismiss, add , showAlert}) => {
     return cnpj.replace(/\D/g, "");
   };
 
+  const [isLoading, setIsLoading] = useState(false);
+  const renderLoading = () => (
+    isLoading? <Spinner /> : <></>
+  )
+
   // Change handlers
   const handleChange = (field, value) => {
     setItem((prevItem) => ({ ...prevItem, [field]: value }));
 
     if (field === "cnpj" && cleanCNPJ(value).length === 14) {
+      setIsLoading(true);
       getCNPJData(cleanCNPJ(value))
         .then(({ data }) => {
-          
           // Optionally, update the item state with the returned data
           setItem((prevItem) => ({
             ...prevItem,
@@ -67,8 +74,12 @@ export const AddClient = ({ onDismiss, add , showAlert}) => {
             uf: data["UF"],
             phone: `${data["DDD"]} ${data["TELEFONE"]}`,
           }));
+          setIsLoading(false);
         })
-        .catch(() => alert("Error fetching CNPJ data"));
+        .catch(() => {
+          alert("Error fetching CNPJ data");
+          setIsLoading(false);
+        });
     }
   };
 
@@ -95,8 +106,9 @@ export const AddClient = ({ onDismiss, add , showAlert}) => {
           <Input
             size="small"
             placeholder="00.000.000/0001-91"
-            value={item.cnpj}
+            value={cnpjFormatter(item.cnpj)}
             onChangeText={(value) => handleChange("cnpj", value)}
+            accessoryRight={renderLoading}
           />
         </Layout>
         <Layout style={{ padding: 15 }}>

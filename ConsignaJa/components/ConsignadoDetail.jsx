@@ -11,20 +11,28 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import { CancelAlert } from "./CancelAlert";
 import { ConsorcioProductList } from "./ConsorcioProductList";
+import { ConsignadoProductFinalized } from "./ConsignadoProductFinalized";
+import {generateAndDownloadPDF} from "../services/GenerateAndDownloadPDF";
+import { useData } from "../context/data-context";
 
 export const ConsignadoDetail = ({
   selected = false,
   onDismiss = () => {},
   item = {},
 }) => {
+
+  const { clients } = useData();
   const [visible, setVisible] = useState(false);
 
   const [editMode, setEditmode] = useState(false);
 
   const [cancelModal, setCancelModal] = useState(false);
 
+  const [client, setClient] = useState({});
+
   useEffect(() => {
     setVisible(selected);
+    setClient(clients.find(client => client.name === item.client_id))
   }, [selected]);
 
   const dismiss = () => {
@@ -36,6 +44,10 @@ export const ConsignadoDetail = ({
   };
 
   const renderItemIcon = (props) => <Icon {...props} name="trash-2-outline" />;
+
+  const handleDownloadPDF = () => {
+    generateAndDownloadPDF(item, client);
+  };
 
   return (
     <Modal
@@ -65,7 +77,8 @@ export const ConsignadoDetail = ({
           <Input size="small" placeholder={item.status} disabled />
         </Layout>
         <Layout style={{ padding: 15 }}>
-          <ConsorcioProductList productList={item.productList} />
+          {item.status === "Finalizado"? <ConsignadoProductFinalized productList={item.productList}/> : <ConsorcioProductList productList={item.productList} />}
+          
         </Layout>
         <Layout style={{ padding: 15 }}>
           <Text category="s1">Valor Total</Text>
@@ -80,7 +93,7 @@ export const ConsignadoDetail = ({
             paddingBottom: 15,
           }}
         >
-          <Button onPress={() => alert("PDF GERADO!")}>Gerar PDF</Button>
+          <Button onPress={handleDownloadPDF}>Gerar PDF</Button>
           {item.status === "Finalizado" ? (
             <></>
           ) : (
