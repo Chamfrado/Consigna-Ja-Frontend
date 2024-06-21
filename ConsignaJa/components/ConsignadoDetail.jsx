@@ -109,7 +109,7 @@ export const ConsignadoDetail = ({ selected, onDismiss, item }) => {
 
         <Layout style={{ flexDirection: 'row', justifyContent: 'space-between', paddingTop: 15, paddingBottom: 15 }}>
           <Button onPress={() => alert("PDF GERADO!")}  >Gerar PDF</Button>
-          {item.status === "Finalizado"? null : <Button onPress={() => alert("Processo Finalizado!")} status='success'>Finalizar</Button> }
+          {item.status === "Finalizado"? <></> : <Button onPress={() => alert("Processo Finalizado!")} status='success'>Finalizar</Button> }
           <Button size='tiny' status='danger' appearance='outline' accessoryLeft={renderItemIcon} onPress={() => alert("Deletado!")}>Deletar</Button>
         </Layout>
         
