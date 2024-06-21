@@ -1,38 +1,28 @@
-import {
-  Button,
-  Card,
-  Icon,
-  Input,
-  Layout,
-  Modal,
-  Text,
-} from "@ui-kitten/components";
 import React, { useEffect, useState } from "react";
+import { Button, Card, Icon, Input, Layout, Modal, Text } from "@ui-kitten/components";
 import { StyleSheet } from "react-native";
 import { CancelAlert } from "./CancelAlert";
 import { ConsorcioProductList } from "./ConsorcioProductList";
 import { ConsignadoProductFinalized } from "./ConsignadoProductFinalized";
-import {generateAndDownloadPDF} from "../services/GenerateAndDownloadPDF";
+import { generateAndDownloadPDF } from "../services/GenerateAndDownloadPDF";
 import { useData } from "../context/data-context";
+import { FinalizeModal } from "./FinalizeModal";
 
 export const ConsignadoDetail = ({
   selected = false,
   onDismiss = () => {},
   item = {},
 }) => {
-
-  const { clients } = useData();
+  const { clients, updateConsignado } = useData();
   const [visible, setVisible] = useState(false);
-
   const [editMode, setEditmode] = useState(false);
-
   const [cancelModal, setCancelModal] = useState(false);
-
+  const [finalizeModalVisible, setFinalizeModalVisible] = useState(false);
   const [client, setClient] = useState({});
 
   useEffect(() => {
     setVisible(selected);
-    setClient(clients.find(client => client.name === item.client_id))
+    setClient(clients.find((client) => client.name === item.client_id));
   }, [selected]);
 
   const dismiss = () => {
@@ -49,13 +39,23 @@ export const ConsignadoDetail = ({
     generateAndDownloadPDF(item, client);
   };
 
+  const handleFinalize = () => {
+    setFinalizeModalVisible(true);
+  };
+
+  const handleSaveFinalize = (updatedProducts) => {
+    const updatedConsignado = {
+      ...item,
+      productList: updatedProducts,
+      status: "Finalizado",
+    };
+    updateConsignado(item.id, updatedConsignado);
+    setFinalizeModalVisible(false);
+    onDismiss();
+  };
+
   return (
-    <Modal
-      visible={visible}
-      backdropStyle={styles.backdrop}
-      onBackdropPress={dismiss}
-      animationType="fade"
-    >
+    <Modal visible={visible} backdropStyle={styles.backdrop} onBackdropPress={dismiss} animationType="fade">
       <Card disabled={true}>
         <Layout style={{ alignItems: "center" }}>
           <Text category="h5">Consignado Nº {item.id}</Text>
@@ -77,53 +77,39 @@ export const ConsignadoDetail = ({
           <Input size="small" placeholder={item.status} disabled />
         </Layout>
         <Layout style={{ padding: 15 }}>
-          {item.status === "Finalizado"? <ConsignadoProductFinalized productList={item.productList}/> : <ConsorcioProductList productList={item.productList} />}
-          
+          {item.status === "Finalizado" ? (
+            <ConsignadoProductFinalized productList={item.productList} />
+          ) : (
+            <ConsorcioProductList productList={item.productList} />
+          )}
         </Layout>
         <Layout style={{ padding: 15 }}>
           <Text category="s1">Valor Total</Text>
           <Input size="small" placeholder={`R$ ${item.value}.00`} disabled />
         </Layout>
-
-        <Layout
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            paddingTop: 15,
-            paddingBottom: 15,
-          }}
-        >
+        <Layout style={{ flexDirection: "row", justifyContent: "space-between", paddingTop: 15, paddingBottom: 15 }}>
           <Button onPress={handleDownloadPDF}>Gerar PDF</Button>
           {item.status === "Finalizado" ? (
             <></>
           ) : (
-            <Button
-              onPress={() => alert("Processo Finalizado!")}
-              status="success"
-            >
+            <Button onPress={handleFinalize} status="success">
               Finalizar
             </Button>
           )}
-          <Button
-            size="tiny"
-            status="danger"
-            appearance="outline"
-            accessoryLeft={renderItemIcon}
-            onPress={() => alert("Deletado!")}
-          >
+          <Button size="tiny" status="danger" appearance="outline" accessoryLeft={renderItemIcon} onPress={() => alert("Deletado!")}>
             Deletar
           </Button>
         </Layout>
-
         <Button onPress={dismiss}>Voltar</Button>
       </Card>
-
+      <FinalizeModal
+        visible={finalizeModalVisible}
+        onCancel={() => setFinalizeModalVisible(false)}
+        onSave={handleSaveFinalize}
+        productList={item.productList}
+      />
       {cancelModal ? (
-        <CancelAlert
-          state={cancelModal}
-          dismiss={onDismiss}
-          changeState={changeState}
-        />
+        <CancelAlert state={cancelModal} dismiss={onDismiss} changeState={changeState} />
       ) : (
         <></>
       )}

@@ -11,10 +11,10 @@ import {
 import { ConsignadoDetail } from "./ConsignadoDetail";
 import { AddConsorcio } from "./AddConsorcio";
 import { useData } from "../context/data-context";
-import {AlertComponent} from "../components/OperationAlert"
+import { AlertComponent } from "../components/OperationAlert";
 
 export const ConsignadoTable = () => {
-    const {consignados} = useData();
+  const { consignados } = useData();
   const [selectedItem, setSelectedItem] = useState({
     item: null,
     selected: false,
@@ -78,8 +78,13 @@ export const ConsignadoTable = () => {
   };
 
   const onSuccess = (message, status) => {
-    showAlert(message, status)
-  }
+    showAlert(message, status);
+  };
+
+  // Sort consignados by date
+  const sortedConsignados = [...consignados].sort((a, b) => {
+    return new Date(a.date) - new Date(b.date);
+  });
 
   return (
     <Layout>
@@ -97,14 +102,18 @@ export const ConsignadoTable = () => {
       <Divider />
       <List
         style={{ maxHeight: 475 }}
-        data={consignados}
+        data={sortedConsignados}
         ItemSeparatorComponent={Divider}
         renderItem={renderItem}
       />
       <Layout style={{ paddingTop: 3 }}>
         <Button onPress={() => setOnAdd(true)}>Nova Operação</Button>
       </Layout>
-      {onAdd ? <AddConsorcio onDismiss={dismissAddModal} add={onAdd} showAlert={onSuccess} /> : <></>}
+      {onAdd ? (
+        <AddConsorcio onDismiss={dismissAddModal} add={onAdd} showAlert={onSuccess} />
+      ) : (
+        <></>
+      )}
       {selectedItem.selected ? (
         <ConsignadoDetail
           item={selectedItem.item}

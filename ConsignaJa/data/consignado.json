@@ -2,8 +2,8 @@
   {
     "id": 1,
     "client_id": "Loja do José",
-    "date": "2024-05-01",
-    "date_fin": "2024-05-30",
+    "date": "01/05/2024",
+    "date_fin": "30/05/2024",
     "status": "Em Andamento",
     "value": 1000.00,
     "productList": [
@@ -28,8 +28,8 @@
   {
     "id": 2,
     "client_id": "Drogaria Popular",
-    "date": "2024-05-02",
-    "date_fin": "2024-05-30",
+    "date": "02/05/2024",
+    "date_fin": "30/05/2024",
     "status": "Finalizado",
     "value": 1500.00,
     "productList": [
@@ -54,8 +54,8 @@
   {
     "id": 3,
     "client_id": "Supermercado da Maria",
-    "date": "2024-05-02",
-    "date_fin": "2024-05-30",
+    "date": "02/05/2024",
+    "date_fin": "30/05/2024",
     "status": "Finalizado",
     "value": 2000.00,
     "productList": [
@@ -80,8 +80,8 @@
   {
     "id": 4,
     "client_id": "Padaria Sabor & Delícia",
-    "date": "2024-05-03",
-    "date_fin": "2024-05-30",
+    "date": "03/05/2024",
+    "date_fin": "30/05/2024",
     "status": "Em Andamento",
     "value": 2500.00,
     "productList": [
@@ -106,8 +106,8 @@
   {
     "id": 5,
     "client_id": "Loja de Moda Fashion",
-    "date": "2024-05-04",
-    "date_fin": "2024-05-30",
+    "date": "04/05/2024",
+    "date_fin": "30/05/2024",
     "status": "Em Andamento",
     "value": 1700.00,
     "productList": [
@@ -132,8 +132,8 @@
   {
     "id": 6,
     "client_id": "Casa de Materiais de Construção ABC",
-    "date": "2024-05-05",
-    "date_fin": "2024-05-30",
+    "date": "05/05/2024",
+    "date_fin": "30/05/2024",
     "status": "Finalizado",
     "value": 2600.00,
     "productList": [
@@ -158,8 +158,8 @@
   {
     "id": 7,
     "client_id": "Loja de Ferramentas Aço & Ferro",
-    "date": "2024-05-06",
-    "date_fin": "2024-05-30",
+    "date": "06/05/2024",
+    "date_fin": "30/05/2024",
     "status": "Em Andamento",
     "value": 2300.00,
     "productList": [
@@ -184,8 +184,8 @@
   {
     "id": 8,
     "client_id": "Pet Shop Amigo Fiel",
-    "date": "2024-05-07",
-    "date_fin": "2024-05-30",
+    "date": "07/05/2024",
+    "date_fin": "30/05/2024",
     "status": "Finalizado",
     "value": 2000.00,
     "productList": [
